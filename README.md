@@ -7,8 +7,7 @@ Few examples how downstream devices can be authenticated in scenarios with Azure
 2. In Azure Portal, create IoT Hub and add [new Edge device] with Symmetric key as AuthenticationType - https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal
    a) Copy the connection string 
 3. In Azure Portal, create two [new devices] one with sas authentication type and the other one with CertificateAuthority authentication type
-   [Picture 1]
-    a) Copy the "Sas" device connection string
+	a) Copy the "Sas" device connection string
 4. [Create certificates] and use the deviceId from steps 2. and 3. when creating device and edge certificate - https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md
    a) [Add Root certificate to IoT Hub]  and follow the steps for the certificate verification - https://docs.microsoft.com/en-us/azure/iot-dps/how-to-verify-certificates
 5. Make sure to store following certificates on the Linux VM on which IoT Edge is running:
@@ -40,8 +39,6 @@ Few examples how downstream devices can be authenticated in scenarios with Azure
 			"route": "FROM /* INTO $upstream"
 		}
 	}
-
-	[Picture 2]
 	
 	Follow the steps in Azure portal and finish the module deployment to the Edge device. After this routes should be updated.
 
