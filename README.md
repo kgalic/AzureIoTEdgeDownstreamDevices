@@ -31,9 +31,9 @@ Few examples how downstream devices can be authenticated in scenarios with Azure
  8. Certificates section in config.yaml should look like:
 	```
 	certificates:
-		device_ca_cert: "/home/kresimir/SharedFolder/new-edge-device-full-chain.cert.pem"
-		device_ca_pk: "/home/kresimir/SharedFolder/new-edge-device.key.pem"
-		trusted_ca_certs: "/home/kresimir/SharedFolder/azure-iot-test-only.root.ca.cert.pem"
+		device_ca_cert: "/path/to/cert/folder/new-edge-device-full-chain.cert.pem"
+		device_ca_pk: "/path/to/cert/folder/new-edge-device.key.pem"
+		trusted_ca_certs: "/path/to/cert/folder/azure-iot-test-only.root.ca.cert.pem"
 	```
 	
 9.  In Azure Portal routes should be set as:
