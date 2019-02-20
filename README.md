@@ -18,35 +18,42 @@ Few examples how downstream devices can be authenticated in scenarios with Azure
    sudo chmod +o+rw config.yaml
    
    To Edit the file it is possible to use following command:
+   ```
    sudo nano config.yaml
+   ```
    
 7. Provisioning section in config.yaml should be: 
-   
+	```
 	provisioning:
 		source: "manual"
 		device_connection_string: "your_edge_device_connection_string_from_step_2a"
- 
+	```
  8. Certificates section in config.yaml should look like:
- 
+	```
 	certificates:
 		device_ca_cert: "/home/kresimir/SharedFolder/new-edge-device-full-chain.cert.pem"
 		device_ca_pk: "/home/kresimir/SharedFolder/new-edge-device.key.pem"
 		trusted_ca_certs: "/home/kresimir/SharedFolder/azure-iot-test-only.root.ca.cert.pem"
-
+	```
+	
 9.  In Azure Portal routes should be set as:
+	```
 	{
 		"routes": {
 			"route": "FROM /* INTO $upstream"
 		}
 	}
+	```
 	
 	Follow the steps in Azure portal and finish the module deployment to the Edge device. After this routes should be updated.
 
 10. In order to double check if everything works fine IoT Edge runtime can be restarted
-	
+	```
 	sudo systemctl restart iotedge
+	```
 	
 	and following command should return status 'Active':
 	
+	```
 	sudo systemctl status iotedge
-	
+	```
